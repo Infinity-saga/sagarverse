@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SagarVerse — Art of Sagar</title>
+  <style>
+    :root {--bg:#07070a;--accent:#7c5cff;--muted:#9aa0a6;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    html,body{font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:#e6e7ea;scroll-behavior:smooth;overflow-x:hidden;}
+
+    /* -------- Header -------- */
+    header{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);display:flex;justify-content:space-between;align-items:center;padding:14px 36px;}
+    header h1{font-size:20px;color:var(--accent);font-weight:800;}
+    nav a{color:#e6e7ea;text-decoration:none;margin:0 14px;font-weight:500;transition:.3s;}
+    nav a:hover{color:var(--accent);}
+
+    /* -------- Video Intro -------- */
+    #intro{position:fixed;inset:0;z-index:10000;overflow:hidden;background:#000;display:flex;align-items:center;justify-content:center;animation:fadeOut 1s ease 6s forwards;}
+    #intro video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+    @keyframes fadeOut{to{opacity:0;visibility:hidden;pointer-events:none;}}
+
+    /* -------- Sections -------- */
+    section{padding:120px 36px;max-width:1100px;margin:auto;}
+    .hero{text-align:center;margin-top:80px;}
+    .hero h2{font-size:clamp(32px,5vw,64px);margin-bottom:14px;background:linear-gradient(90deg,var(--accent),#4fb6ff);-webkit-background-clip:text;color:transparent;font-weight:900;}
+    .hero p{color:var(--muted);max-width:700px;margin:0 auto 50px;}
+
+    /* Blog cards */
+    .blog-grid{display:grid;gap:30px;}
+    .post{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:30px;transition:.3s;}
+    .post:hover{transform:translateY(-4px);background:rgba(255,255,255,0.04);}
+    .post h3{color:var(--accent);margin-bottom:10px;}
+    .post p{color:var(--muted);line-height:1.6;}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px;}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border-radius:14px;padding:10px;border:1px solid rgba(255,255,255,0.03);overflow:hidden;min-height:180px;display:flex;flex-direction:column;cursor:pointer;}
+    .art{flex:1;border-radius:10px;background-size:cover;background-position:center;box-shadow:0 12px 30px rgba(2,6,23,0.6);transition:transform .28s ease;}
+    .card:hover .art{transform:scale(1.03);}
+    .meta{margin-top:10px;display:flex;justify-content:space-between;align-items:center;}
+    .title{font-weight:700;}
+    .price{color:var(--muted);font-size:14px;}
+
+    /* About */
+    #about{text-align:center;}
+    #about img{width:120px;height:120px;border-radius:50%;margin-bottom:20px;object-fit:cover;}
+    #about p{color:var(--muted);max-width:700px;margin:0 auto 20px;line-height:1.6;}
+
+    footer{text-align:center;padding:40px 36px;color:var(--muted);font-size:13px;}
+  </style>
+</head>
+<body>
+  <audio id="bgm" src="assets/bgm.mp3" autoplay loop playsinline></audio>
+
+  <div id="intro">
+    <video autoplay muted playsinline>
+      <source src="assets/V5.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <header>
+    <h1>SagarVerse</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <main id="site">
+    <section id="home" class="hero">
+      <h2>Welcome to SagarVerse</h2>
+      <p>Where anime breathes on canvas — explore the mysterious world of Sagar’s journey through art and inspiration.</p>
+      <div class="blog-grid">
+        <div class="post">
+          <h3>The Spark of Anime</h3>
+          <p>It all started when Sagar first discovered anime — the emotion, the motion, the storytelling. That energy sparked his passion for drawing, shaping his creative universe.</p>
+        </div>
+        <div class="post">
+          <h3>Sketches to Stories</h3>
+          <p>What began as simple sketches turned into entire storyboards of feeling. Each stroke carries a sense of emotion, a blend of fantasy and truth only seen in the anime realm.</p>
+        </div>
+        <div class="post">
+          <h3>The Digital Transformation</h3>
+          <p>Now, his artworks transcend paper — evolving into digital masterpieces that connect people across the world, one emotion at a time.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <h2 style="text-align:center;margin-bottom:40px;">Gallery</h2>
+      <div class="gallery">
+        <div class="card"><div class="art" style="background-image:url('assets/art1.jpg')"></div><div class="meta"><div class="title">Untitled • 01</div><div class="price">$49</div></div></div>
+        <div class="card"><div class="art" style="background-image:url('assets/art2.jpg')"></div><div class="meta"><div class="title">Untitled • 02</div><div class="price">$69</div></div></div>
+        <div class="card"><div class="art" style="background-image:url('assets/art3.jpg')"></div><div class="meta"><div class="title">Untitled • 03</div><div class="price">$89</div></div></div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About the Artist</h2>
+      <img src="assets/profile.jpg" alt="Sagar profile photo" />
+      <p>Sagar is a visionary artist whose world of anime-inspired art blends emotion, imagination, and dedication. His journey from sketching in notebooks to digital storytelling embodies pure creativity and the love for visual art.</p>
+      <p>Follow his universe on <a href="#" style="color:var(--accent);text-decoration:none;">Instagram</a> or <a href="#" style="color:var(--accent);text-decoration:none;">ArtStation</a>.</p>
+    </section>
+  </main>
+
+  <footer>© <span id="year"></span> SagarVerse · All rights reserved.</footer>
+
+  <script>
+    const bgm=document.getElementById('bgm');
+    document.getElementById('year').textContent=new Date().getFullYear();
+
+    function playAudio(){bgm.volume=0.3;bgm.muted=false;const p=bgm.play();if(p)p.catch(()=>{bgm.muted=true;});}
+
+    window.addEventListener('DOMContentLoaded',()=>{
+      playAudio();
+      setTimeout(()=>{document.getElementById('intro').style.display='none';},7000);
+    });
+
+    // Lightbox for gallery images
+    document.getElementById('gallery').addEventListener('click',e=>{
+      const card=e.target.closest('.card');if(!card)return;
+      const bg=card.querySelector('.art').style.backgroundImage;
+      const overlay=document.createElement('div');
+      overlay.style.position='fixed';overlay.style.inset='0';overlay.style.background='rgba(6,6,9,0.95)';overlay.style.display='flex';overlay.style.alignItems='center';overlay.style.justifyContent='center';overlay.style.zIndex='9999';
+      const img=document.createElement('div');
+      img.style.width='90%';img.style.height='90%';img.style.background=bg;img.style.backgroundSize='contain';img.style.backgroundRepeat='no-repeat';img.style.backgroundPosition='center';img.style.borderRadius='12px';
+      overlay.appendChild(img);
+      overlay.addEventListener('click',()=>overlay.remove());
+      document.body.appendChild(overlay);
+    });
+  </script>
+</body>
+</html>
